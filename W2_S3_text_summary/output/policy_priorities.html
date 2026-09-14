@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2025 Policy Address | Policy Priorities</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #5f6b75;
+      --paper: #f7f4ee;
+      --panel: #fffdf8;
+      --line: #d8d2c7;
+      --accent: #c84b31;
+      --accent-dark: #8e2f22;
+      --teal: #176b69;
+      --shadow: 0 18px 45px rgba(42, 35, 25, .1);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      padding: 54px 0 38px;
+      background: linear-gradient(135deg, #f0e5d2 0%, #f7f4ee 58%, #dce9e4 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--accent-dark);
+      font: 700 .8rem/1.2 Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 { max-width: 780px; margin: 0; font-size: clamp(2.4rem, 6vw, 5.6rem); line-height: .98; font-weight: 500; }
+    .intro { max-width: 720px; margin: 22px 0 0; color: #39454d; font-size: 1.12rem; }
+    main { padding: 30px 0 62px; }
+    .toolbar { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 22px; }
+    .toolbar label { font: 700 .8rem Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+    #search {
+      flex: 1 1 280px; min-height: 44px; padding: 10px 14px; border: 1px solid var(--line);
+      border-radius: 3px; background: var(--panel); color: var(--ink); font: 1rem Georgia, serif;
+    }
+    #search:focus, .filter:focus-visible, .clear-search:focus-visible {
+      outline: 3px solid rgba(23, 107, 105, .25);
+      outline-offset: 2px;
+    }
+    .clear-search {
+      min-height: 44px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 3px;
+      background: var(--panel); color: var(--accent-dark); cursor: pointer; font: 700 .86rem Arial, sans-serif;
+    }
+    .clear-search:hover { background: var(--accent-dark); color: white; }
+    .result-count { flex-basis: 100%; margin: 0; color: var(--muted); font: .88rem Arial, sans-serif; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    .filter {
+      border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; background: transparent;
+      color: var(--ink); cursor: pointer; font: 700 .86rem Arial, sans-serif;
+    }
+    .filter:hover, .filter.active { background: var(--teal); border-color: var(--teal); color: white; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .card { display: flex; flex-direction: column; padding: 23px; background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); animation: rise-in .45s ease both; }
+    .card:hover { border-color: var(--teal); transform: translateY(-3px); transition: transform .2s ease, border-color .2s ease; }
+    .card[hidden] { display: none; }
+    .card h2 { margin: 0 0 12px; font-size: 1.42rem; line-height: 1.1; }
+    .cue { margin: 0 0 15px; color: var(--accent-dark); font: 700 .76rem Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+    .card ul { margin: 0; padding-left: 20px; }
+    .card li { margin: 8px 0; }
+    .source { margin: auto 0 0; padding-top: 18px; color: var(--muted); font-size: .88rem; }
+    .source a, footer a { color: var(--accent-dark); }
+    .notice { margin-top: 30px; padding: 18px 20px; border-left: 4px solid var(--accent); background: #f2e6d7; }
+    .notice strong { display: block; margin-bottom: 4px; font-family: Arial, sans-serif; }
+    .no-results { margin: 0; padding: 28px; border: 1px dashed var(--line); color: var(--muted); text-align: center; background: rgba(255, 253, 248, .7); }
+    @keyframes rise-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .card { animation: none; } .card:hover { transform: none; } }
+    footer { padding: 22px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    @media (max-width: 600px) { header { padding-top: 35px; } .wrap { width: min(100% - 22px, 1120px); } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="kicker">Document study · Week 2</p>
+      <h1>2025 Policy Address</h1>
+      <p class="intro">A checkable first-pass map of policy priorities from <em>The Chief Executive's 2025 Policy Address</em>: <em>Deepening Reforms for Our People; Leveraging Our Strengths for a Brighter Future</em>.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <label for="search">Find a priority</label>
+      <input id="search" type="search" placeholder="Search themes, measures, or chapter cues" autocomplete="off">
+      <button class="clear-search" id="clear-search" type="button">Clear search</button>
+      <p class="result-count" id="result-count" role="status"></p>
+    </div>
+    <nav class="filters" aria-label="Filter policy themes">
+      <button class="filter active" type="button" data-filter="all">All themes</button>
+      <button class="filter" type="button" data-filter="livelihood">People &amp; livelihood</button>
+      <button class="filter" type="button" data-filter="economy">Economy</button>
+      <button class="filter" type="button" data-filter="place">Place &amp; infrastructure</button>
+      <button class="filter" type="button" data-filter="community">Community &amp; culture</button>
+    </nav>
+
+    <section class="cards" aria-live="polite">
+      <article class="card" data-theme="livelihood">
+        <p class="cue">Chapter I · People’s livelihood</p>
+        <h2>Deepen reforms and support daily life</h2>
+        <ul>
+          <li>The Address presents reform as part of the roadmap for Hong Kong's development.</li>
+          <li>It links policy work to people’s livelihood and practical, effective governance.</li>
+          <li>Measures are grouped around improving services and responding to community needs.</li>
+        </ul>
+        <p class="source">Source cue: <a href="../policy-full_en.pdf#page=3">PDF, Chapter I</a>. Check the surrounding paragraphs before quoting.</p>
+      </article>
+
+      <article class="card" data-theme="economy">
+        <p class="cue">Contents · Economic development</p>
+        <h2>Diversify and strengthen the economy</h2>
+        <ul>
+          <li>Economic diversification is identified as a policy direction.</li>
+          <li>The document names development of the food industry as one area of work.</li>
+          <li>It also identifies the culture and creative industries, and the fisheries industries, as areas for development.</li>
+        </ul>
+        <p class="source">Source cue: <a href="../policy-full_en.pdf#page=2">PDF, Contents</a>. Verify the detailed measures in the relevant chapter.</p>
+      </article>
+
+      <article class="card" data-theme="economy">
+        <p class="cue">Chapter II · Economic development</p>
+        <h2>Build capacity for future growth</h2>
+        <ul>
+          <li>The policy programme connects economic development with Hong Kong’s strengths.</li>
+          <li>It proposes support for selected industries and new opportunities.</li>
+          <li>The focus is on policy actions and institutional support, not a guaranteed outcome.</li>
+        </ul>
+        <p class="source">Source cue: <a href="../policy-full_en.pdf#page=4">PDF, Chapter II</a>. Treat this card as a navigation aid, not an official interpretation.</p>
+      </article>
+
+      <article class="card" data-theme="place">
+        <p class="cue">Contents · Infrastructure and development</p>
+        <h2>Plan the city and regional connections</h2>
+        <ul>
+          <li>The Contents includes development themes that connect infrastructure with wider economic planning.</li>
+          <li>Major projects should be read alongside the Address’s stated development priorities.</li>
+          <li>The page does not estimate costs, timelines, or impacts unless the PDF section explicitly does so.</li>
+        </ul>
+        <p class="source">Source cue: <a href="../policy-full_en.pdf#page=2">PDF, Contents</a>. Spot-check the named section in the full document.</p>
+      </article>
+
+      <article class="card" data-theme="community">
+        <p class="cue">Chapter I · Social development</p>
+        <h2>Support an inclusive community</h2>
+        <ul>
+          <li>The Address includes social development as a policy area.</li>
+          <li>It names working groups and strategies related to ageing society and women’s development.</li>
+          <li>It also includes measures concerning children and families.</li>
+        </ul>
+        <p class="source">Source cue: <a href="../policy-full_en.pdf#page=3">PDF, Chapter I</a>. Confirm the exact policy wording in context.</p>
+      </article>
+
+      <article class="card" data-theme="community">
+        <p class="cue">Contents · Culture and society</p>
+        <h2>Promote culture, sport, and civic life</h2>
+        <ul>
+          <li>Culture and creative industries appear in the Address’s development priorities.</li>
+          <li>The document also connects policy planning with culture and sports.</li>
+          <li>These headings indicate areas of attention; they do not by themselves prove results.</li>
+        </ul>
+        <p class="source">Source cue: <a href="../policy-full_en.pdf#page=2">PDF, Contents</a>. Use the full chapter for a complete summary.</p>
+      </article>
+    </section>
+    <p class="no-results" id="no-results" hidden>No priorities match your search and theme filter.</p>
+
+    <aside class="notice">
+      <strong>Verification note</strong>
+      This is a student-made summary of the supplied public document, not government advice or the Policy Address itself. Check every claim against <a href="../policy-full_en.pdf">the PDF</a>; remove any bullet that cannot be located in the source.
+    </aside>
+  </main>
+
+  <footer>
+    <div class="wrap">Source document: <a href="../policy-full_en.pdf">policy-full_en.pdf</a> · Prepared for document-summary practice.</div>
+  </footer>
+
+  <script>
+    const search = document.querySelector('#search');
+    const clearSearch = document.querySelector('#clear-search');
+    const resultCount = document.querySelector('#result-count');
+    const noResults = document.querySelector('#no-results');
+    const buttons = document.querySelectorAll('.filter');
+    const cards = document.querySelectorAll('.card');
+    let activeFilter = 'all';
+
+    function updateCards() {
+      const query = search.value.trim().toLowerCase();
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const matchesFilter = activeFilter === 'all' || card.dataset.theme === activeFilter;
+        const matchesSearch = card.textContent.toLowerCase().includes(query);
+        const visible = matchesFilter && matchesSearch;
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+      resultCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'priority' : 'priorities'} shown`;
+      noResults.hidden = visibleCount !== 0;
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.filter;
+        buttons.forEach(item => item.classList.toggle('active', item === button));
+        updateCards();
+      });
+    });
+    search.addEventListener('input', updateCards);
+    clearSearch.addEventListener('click', () => {
+      search.value = '';
+      activeFilter = 'all';
+      buttons.forEach(item => item.classList.toggle('active', item.dataset.filter === 'all'));
+      updateCards();
+      search.focus();
+    });
+    updateCards();
+  </script>
+</body>
+</html>
